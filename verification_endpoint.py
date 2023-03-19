@@ -27,8 +27,8 @@ def verify():
     }
 
     if(platform=="Algorand"){
-      if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
-        result=True
+      //if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
+        //result=True
     }
 
     return jsonify(result)

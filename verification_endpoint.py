@@ -21,15 +21,15 @@ def verify():
 
     #Check if signature is valid
 
-    if(platform=="Ethereum"){
+    //if(platform=="Ethereum"){
       //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
         //result=True
-    }
+    //}
 
-    if(platform=="Algorand"){
+    //if(platform=="Algorand"){
       //if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
         //result=True
-    }
+   // }
 
     return jsonify(result)
 

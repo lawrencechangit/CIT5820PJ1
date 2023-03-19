@@ -17,7 +17,7 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
     
-    result=False
+    //result=False
     
     //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
         //result=True

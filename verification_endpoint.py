@@ -21,6 +21,8 @@ def verify():
     
     if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
         result=True
+    else if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+        result=True
     
     #Check if signature is valid
     

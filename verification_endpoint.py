@@ -17,13 +17,7 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
     
-    //result=False
-    
-    if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-        result=True
-    
-    //if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
-        //result=True
+   
     
     #Check if signature is valid
     result = True #Should only be true if signature validates

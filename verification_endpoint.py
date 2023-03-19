@@ -12,10 +12,10 @@ app.url_map.strict_slashes = False
 def verify():
     content = request.get_json(silent=True)
     
-    signature=content['sig']
-    pk=content['payload']['pk']
-    platform=content['payload']['platform']
-    message=content['payload']['message']
+    //signature=content['sig']
+    //pk=content['payload']['pk']
+    //platform=content['payload']['platform']
+    //message=content['payload']['message']
     
     result = False #Should only be true if signature validates
     

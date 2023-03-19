@@ -17,11 +17,7 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
     
-    if(platform=="Ethereum"){
-        print("platform is Eth")
-      //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-        result=True
-    }
+
     
     #Check if signature is valid
     result = True #Should only be true if signature validates

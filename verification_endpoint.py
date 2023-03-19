@@ -14,6 +14,12 @@ def verify():
 
     #Check if signature is valid
     result = True #Should only be true if signature validates
+    
+    signature=content['sig']
+    pk=content['payload']['pk']
+    platform=content['payload']['platform']
+    message=content['payload']['message']
+    
     return jsonify(result)
 
 if __name__ == '__main__':

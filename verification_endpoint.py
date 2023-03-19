@@ -17,7 +17,7 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
     
-    result = False #Should only be true if signature validates
+    
     
     //if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
         //result=True
@@ -26,7 +26,7 @@ def verify():
         //result=True
     
     #Check if signature is valid
-    
+    result = False #Should only be true if signature validates
     return jsonify(result)
 
 if __name__ == '__main__':

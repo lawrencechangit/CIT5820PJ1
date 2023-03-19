@@ -22,8 +22,8 @@ def verify():
     #Check if signature is valid
 
     if(platform=="Ethereum"){
-      if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-        result=True
+      //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+        //result=True
     }
 
     if(platform=="Algorand"){

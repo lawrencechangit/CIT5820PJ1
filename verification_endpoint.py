@@ -12,25 +12,8 @@ app.url_map.strict_slashes = False
 def verify():
     content = request.get_json(silent=True)
 
-    //signature=content['sig']
-    //pk=content['payload']['pk']
-    //platform=content['payload']['platform']
-    //message=content['payload']['message']
-
-    result=True
-
     #Check if signature is valid
-
-    //if(platform=="Ethereum"){
-      //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-        //result=True
-    //}
-
-    //if(platform=="Algorand"){
-      //if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
-        //result=True
-   // }
-
+    result = True #Should only be true if signature validates
     return jsonify(result)
 
 if __name__ == '__main__':

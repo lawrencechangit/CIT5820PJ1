@@ -17,7 +17,7 @@ def verify():
     //platform=content['payload']['platform']
     //message=content['payload']['message']
 
-    result=False
+    result=True
 
     #Check if signature is valid
 

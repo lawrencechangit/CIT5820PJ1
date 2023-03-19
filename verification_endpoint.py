@@ -19,11 +19,9 @@ def verify():
     pk=content['payload']['pk']
     platform=content['payload']['platform']
     message=content['payload']['message']
-    
-    if(platform=='Ethereum'){
-      if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+
+    if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
         result=True
-    }
     
     return jsonify(result)
 

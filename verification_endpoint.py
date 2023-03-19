@@ -17,7 +17,7 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
     
-    if(platform=='Ethereum'){
+    if(platform!=' '){
       //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
             result=False
     }

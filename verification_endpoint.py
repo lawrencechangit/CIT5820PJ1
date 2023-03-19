@@ -19,8 +19,8 @@ def verify():
     
     result=False
     
-    if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-            result=True
+    //if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+        //result=True
     
     if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
         result=True

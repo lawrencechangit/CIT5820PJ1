@@ -11,6 +11,13 @@ app.url_map.strict_slashes = False
 @app.route('/verify', methods=['GET','POST'])
 def verify():
     content = request.get_json(silent=True)
+    signature=content['sig']
+    pk=content['payload']['pk']
+    platform=content['payload']['platform']
+    print(signature)
+    print(pk)
+    print(platform)
+    
 
     #Check if signature is valid
     result = True #Should only be true if signature validates

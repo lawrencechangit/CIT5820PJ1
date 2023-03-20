@@ -20,8 +20,14 @@ def verify():
     platform=content['payload']['platform']
     message=content['payload']['message']
 
-
+    print(signature)
+    print(pk)
+    print(platform)
+    print(message)
     
+    if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
+          print("checking algorand signature")
+          result=True
 
     
     return jsonify(result)

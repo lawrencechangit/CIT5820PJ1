@@ -23,6 +23,11 @@ def verify():
     if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
         result=True
     
+    else if(platform=="Algorand"){
+      if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
+          result=True
+    }
+    
     return jsonify(result)
 
 if __name__ == '__main__':

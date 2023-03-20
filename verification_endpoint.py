@@ -25,13 +25,18 @@ def verify():
     print(platform)
     print(message)
     
-    if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
+    if(platform=='Ethereum'){
+        if(eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+         result=True}
+    
+    
+    if (platform=='Algorand'){
+        if(algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
           print("checking algorand signature")
           result=True
-    
+    }
   
-    elif (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-         result=True
+    
     
     return jsonify(result)
 

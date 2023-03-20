@@ -17,7 +17,7 @@ def verify():
     
     signature=content['sig']
     pk=content['payload']['pk']
-    platform=content['payload']['platform']
+    platform=content['payload'][0]['platform']
     message=content['payload']['message']
     
     #if(platform=='Ethereum'):
@@ -32,7 +32,7 @@ def verify():
         #if(algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
         payload = message
 
-        if algosdk.util.verify_bytes(payload.encode('utf-8'),signature,pk):
+        //if algosdk.util.verify_bytes(payload.encode('utf-8'),signature,pk):
             result=True
     
     return jsonify(result)

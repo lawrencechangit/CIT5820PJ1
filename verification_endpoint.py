@@ -17,7 +17,7 @@ def verify():
     
     signature=content['sig']
     pk=content['payload']['pk']
-    platform=content['payload'][0]['platform']
+    platform=content['payload']['platform']
     message=content['payload']['message']
     
     #if(platform=='Ethereum'):

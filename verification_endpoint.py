@@ -30,7 +30,7 @@ def verify():
           result=True
     
   
-    else if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+    elif (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
          result=True
     
     return jsonify(result)

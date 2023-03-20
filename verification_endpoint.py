@@ -25,9 +25,9 @@ def verify():
     print(platform)
     print(message)
     
-    //if(platform=='Ethereum'):
-        //if(eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
-         //result=True
+    #if(platform=='Ethereum'):
+        #if(eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+         #result=True
     
     
     if (platform=='Algorand'):

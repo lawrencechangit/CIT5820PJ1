@@ -13,7 +13,7 @@ def verify():
     content = request.get_json(silent=True)
 
     #Check if signature is valid
-    result = True #Should only be true if signature validates
+    result = False #Should only be true if signature validates
     
     signature=content['sig']
     pk=content['payload']['pk']
@@ -28,7 +28,10 @@ def verify():
     if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
           print("checking algorand signature")
           result=True
-
+    
+  
+    else if (eth_account.Account.recover_message(message,signature=signature.signature.hex()) == pk):
+         result=True
     
     return jsonify(result)
 

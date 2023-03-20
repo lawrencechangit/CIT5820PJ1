@@ -16,9 +16,9 @@ def verify():
     result = False #Should only be true if signature validates
     
     signature=content['sig']
-    pk=content['payload'][0]['pk']
-    platform=content['payload'][0]['platform']
-    message=content['payload'][0]['message']
+    pk=content['payload']['pk']
+    platform=content['payload']['platform']
+    message=content['payload']['message']
 
     print(signature)
     print(pk)

@@ -30,10 +30,10 @@ def verify():
          result=True
     
     
-    if (platform=='Algorand'):
+    #if (platform=='Algorand'):
         #if(algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
           #print("checking algorand signature")
-          result=True
+          #result=True
     
     return jsonify(result)
 

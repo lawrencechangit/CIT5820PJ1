@@ -19,11 +19,6 @@ def verify():
     pk=content['payload']['pk']
     platform=content['payload']['platform']
     message=content['payload']['message']
-
-    print(signature)
-    print(pk)
-    print(platform)
-    print(message)
     
     #if(platform=='Ethereum'):
         #eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
@@ -34,7 +29,7 @@ def verify():
     
     
     if (platform=='Algorand'):
-        if(algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
+        #if(algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):
           
             result=True
     

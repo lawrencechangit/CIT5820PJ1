@@ -26,7 +26,10 @@ def verify():
     print(message)
     
     if(platform=='Ethereum'):
-        if(eth_account.Account.recover_message(message,signature.signature.hex()) == pk):
+        eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
+        
+        if(eth_account.Account.recover_message(eth_encoded_msg,signature.hex()) == pk):
+           
          result=True
     
     

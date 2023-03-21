@@ -28,7 +28,7 @@ def verify():
         #payload = message
         #algo_pk = pk
         if algosdk.util.verify_bytes(message.encode('utf-8'), signature, pk):
-            result = True
+            result = False
 
     return jsonify(result)
 

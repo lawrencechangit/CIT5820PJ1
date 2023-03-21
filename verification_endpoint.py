@@ -25,10 +25,8 @@ def verify():
       eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
       eth_sig_obj = signature
 
-
       if eth_account.Account.recover_message(eth_encoded_msg,signature=eth_sig_obj.signature.hex()) == pk:
         result=True 
-    }
 
     #else if(platform=="Algorand"){
       #if (algosdk.util.verify_bytes(message.encode('utf-8'),signature,pk)):

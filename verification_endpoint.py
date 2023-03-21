@@ -21,7 +21,7 @@ def verify():
 
     #Check if signature is valid
 
-    if(platform=='Ethereum'){
+    if(platform=='Ethereum'):
       eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
       eth_sig_obj = signature
 

@@ -17,21 +17,17 @@ def verify():
     result = False
 
     if (platform == 'Algorand'):
-        print(" ")
-        payload = message
 
+        payload = message
         algo_pk = pk
 
+        print("payload is ",payload)
         print("Encoded message is ", payload.encode('utf-8'))
         print("Public key is", algo_pk)
         print("Signature is", signature)
 
         if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
-            print("It verifies!")
             result = True
-
-        else:
-            print("Not verified!")
     
     return jsonify(result)
 

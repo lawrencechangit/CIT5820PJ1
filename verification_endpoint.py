@@ -12,7 +12,7 @@ app.url_map.strict_slashes = False
 def verify():
     content = request.get_json(silent=True)
 
-    signature = int(content['sig'],16)
+    signature = hex(int(content['sig'],16))
     pk = content['payload']['pk']
     platform = content['payload']['platform']
     message = content['payload']['message']

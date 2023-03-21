@@ -13,7 +13,7 @@ def verify():
     signature = content['sig']
     pk = content['payload']['pk']
     platform = content['payload']['platform']
-    message = content['payload']['message'].strip()
+    message = content['payload']['message']
     result = False
 
     if (platform == 'Algorand'):

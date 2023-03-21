@@ -15,17 +15,16 @@ def verify():
     platform = content['payload']['platform']
     message = content['payload']['message']
     result = False
-
-    if (platform == 'Algorand'):
-
+    
+    if (platform == 'Ethereum'):
+        eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
+        eth_sig_obj = signature
+        if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
+            result = True
+    
+    elif (platform == 'Algorand'):
         payload = message
         algo_pk = pk
-
-        print("payload is ",payload)
-        print("Encoded message is ", payload.encode('utf-8'))
-        print("Public key is", algo_pk)
-        print("Signature is", signature)
-
         if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
             result = True
     

@@ -33,11 +33,11 @@ def verify():
         #else:
             #print("failed to verify!")
 
-    if (platform == 'Algorand'):
-        payload = message
-        algo_pk= pk
-        if algosdk.util.verify_bytes(payload.encode('utf-8'), rawsignature, algo_pk):
-            result=True
+    #if (platform == 'Algorand'):
+        #payload = message
+        #algo_pk= pk
+        #if algosdk.util.verify_bytes(payload.encode('utf-8'), rawsignature, algo_pk):
+            #result=True
     
     return jsonify(result)
 

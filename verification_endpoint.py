@@ -25,7 +25,7 @@ def verify():
             print("It verifies!")
             result = True
 
-    if platform == 'Algorand':
+    elif platform == 'Algorand':
 
         payload = message
         algo_pk = pk

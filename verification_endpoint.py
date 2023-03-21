@@ -32,7 +32,12 @@ def verify():
         else:
             print("failed to verify!")
 
-    print(result)
+    if (platform == 'Algorand'):
+        payload = message
+        algo_pk= pk
+        if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
+            result=True
+    
     return jsonify(result)
 
 if __name__ == '__main__':

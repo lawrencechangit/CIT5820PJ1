@@ -14,23 +14,23 @@ def verify():
     pk = content['payload']['pk']
     platform = content['payload']['platform']
     message = content['payload']['message']
-    result = False
+    result = True
 
     if platform == 'Ethereum':
         eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
         eth_sig_obj = signature
         print(eth_sig_obj)
         print(eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj))
-        if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
-            result = True
+        if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) != pk:
+            result = False
 
     elif platform == 'Algorand':
 
         payload = message
         algo_pk = pk
 
-        if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
-            result = True
+        if !algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
+            result = False
 
     return jsonify(result)
 

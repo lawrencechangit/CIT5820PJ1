@@ -11,7 +11,8 @@ app.url_map.strict_slashes = False
 @app.route('/verify', methods=['GET','POST'])
 def verify():
     content = request.get_json(silent=True)
-
+    
+    rawsignature=content['sig']
     signature = hex(int(content['sig'],16))
     pk = content['payload']['pk']
     platform = content['payload']['platform']
@@ -35,7 +36,7 @@ def verify():
     if (platform == 'Algorand'):
         payload = message
         algo_pk= pk
-        if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, algo_pk):
+        if algosdk.util.verify_bytes(payload.encode('utf-8'), rawsignature, algo_pk):
             result=True
     
     return jsonify(result)

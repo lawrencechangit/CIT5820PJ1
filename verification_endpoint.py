@@ -10,7 +10,6 @@ app.url_map.strict_slashes = False
 
 @app.route('/verify', methods=['GET','POST'])
 def verify():
-    def verify():
     signature = content['sig']
     pk = content['payload']['pk']
     platform = content['payload']['platform']

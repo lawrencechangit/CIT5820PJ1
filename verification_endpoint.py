@@ -25,8 +25,12 @@ def verify():
         eth_encoded_msg = eth_account.messages.encode_defunct(text=message)
         eth_sig_obj = signature
         print(eth_sig_obj)
+        print(eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj))
         if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
+            print("True!")
             result = True
+        else:
+            print("failed to verify!")
 
     print(result)
     return jsonify(result)

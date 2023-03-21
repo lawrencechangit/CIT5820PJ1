@@ -12,7 +12,7 @@ app.url_map.strict_slashes = False
 def verify():
     signature = content['sig']
     pk = content['payload']['pk']
-    payload=content['payload']
+    #payload=content['payload']
     platform = content['payload']['platform']
     message = content['payload']['message']
     result = False

@@ -27,8 +27,7 @@ def verify():
     elif platform == 'Algorand':
         #payload = message
         #algo_pk = pk
-        result = True
-        if algosdk.util.verify_bytes(message.encode('utf-8'), signature, pk):
+        if algosdk.util.verify_bytes(content['payload'].encode('utf-8'), signature, pk):
             result = True
 
     return jsonify(result)

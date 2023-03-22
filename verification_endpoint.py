@@ -19,13 +19,11 @@ def verify():
     
     json_string=json.dumps(content)
     
-    signature=contentPyth['sig']
     contentPyth=json.loads(json_string)
-
+    signature=contentPyth['sig']
+    payload=contentPyth['payload']
     message=contentPyth['payload']['message']
-
     pk=contentPyth['payload']['pk']
-
     platform=contentPyth['payload']['platform']
 
     

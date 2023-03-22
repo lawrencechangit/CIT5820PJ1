@@ -29,15 +29,15 @@ def verify():
     result = False
 
     if platform == 'Ethereum':
+        result= True
         eth_encoded_msg = eth_account.messages.encode_defunct(text=payload)
         eth_sig_obj = signature
         if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
             result = True
 
     elif platform == 'Algorand':
-        #payload = message
-        #algo_pk = pk
-        if algosdk.util.verify_bytes(message.encode('utf-8'), signature, pk):
+        result = True
+        if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, pk):
             result = True
 
     return jsonify(result)

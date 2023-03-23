@@ -21,7 +21,7 @@ def verify():
     contentPyth=json.loads(json_string)
     
     signature=contentPyth['sig']
-    payload=contentPyth['payload']
+    payload = json.dumps(contentPyth['payload'])
     message=contentPyth['payload']['message']
     pk=contentPyth['payload']['pk']
     platform=contentPyth['payload']['platform']

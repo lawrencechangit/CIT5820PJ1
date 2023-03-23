@@ -29,13 +29,13 @@ def verify():
     result = False
 
     if platform == 'Ethereum':
-        eth_encoded_msg = eth_account.messages.encode_defunct(text=contentPyth['payload'])
-        eth_sig_obj = signature
-        if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
+        #eth_encoded_msg = eth_account.messages.encode_defunct(text=contentPyth['payload'])
+        #eth_sig_obj = signature
+        #if eth_account.Account.recover_message(eth_encoded_msg, signature=eth_sig_obj) == pk:
             result = True
 
     elif platform == 'Algorand':
-        #if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, pk):
+        if algosdk.util.verify_bytes(payload.encode('utf-8'), signature, pk):
             result = True
 
     return jsonify(result)

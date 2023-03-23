@@ -12,14 +12,19 @@ app.url_map.strict_slashes = False
 def verify():
     content=request.get_json(silent=True)
     
-    json_string=json.dumps(content)
-    contentPyth=json.loads(json_string)
+    #json_string=json.dumps(content)
+    #contentPyth=json.loads(json_string)
     
-    signature=contentPyth['sig']
-    payload = json.dumps(contentPyth['payload'])
-    pk=contentPyth['payload']['pk']
-    platform=contentPyth['payload']['platform']
-
+    #signature=contentPyth['sig']
+    #payload = json.dumps(contentPyth['payload'])
+    #pk=contentPyth['payload']['pk']
+    #platform=contentPyth['payload']['platform']
+    
+    signature=content['sig']
+    pk=content['pk]
+    platform=content['payload']['platform']
+    payload = json.dumps(content['payload'])
+    
     result = False
 
     if platform == 'Ethereum':
